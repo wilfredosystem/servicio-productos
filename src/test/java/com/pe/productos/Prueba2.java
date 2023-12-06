@@ -4,7 +4,11 @@ public class Prueba2 {
  String a;
  String b;
  int a1;
- int a1;
+ int a2;
 
- system.out.println("esto si va");
+ private void syso() {
+
+System.out.println("ok si va aca");
+
+}
 }
