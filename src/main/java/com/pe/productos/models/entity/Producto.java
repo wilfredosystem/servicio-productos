@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "productos")
@@ -25,6 +26,9 @@ public class Producto implements Serializable {
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
+	
+	@Transient //para indicar que es un campo no persistente ya que solo lo usaremos para ver en que puerto esta ejecutando el servicios
+	private int port;
 	
 	public Long getId() {
 		return id;
@@ -49,6 +53,12 @@ public class Producto implements Serializable {
 	}
 	public void setCreateAt(Date createAt) {
 		this.createAt = createAt;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
 	}
 	
 	
