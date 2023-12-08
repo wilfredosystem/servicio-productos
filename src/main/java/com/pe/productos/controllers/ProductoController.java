@@ -24,7 +24,7 @@ public class ProductoController {
 	
 	@GetMapping("/listar")
 	public List<Producto> listar(){
-		return productoService.findAll().stream().map(
+		return productoService.findAll().stream().map(//se agreago stream para agregar el puerto
 				producto->{
 					producto.setPort(port);
 					return producto;
@@ -34,7 +34,7 @@ public class ProductoController {
 	@GetMapping("/ver/{id}")
 	public Producto detalle(@PathVariable Long id){
 		Producto producto = productoService.findById(id);
-		producto.setPort(port);
+		producto.setPort(port);//se agrego puerto
 		return producto;
 	}
 }
